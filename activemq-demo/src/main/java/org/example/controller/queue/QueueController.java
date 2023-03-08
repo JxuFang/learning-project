@@ -18,12 +18,7 @@ public class QueueController {
 
     @GetMapping("/hello")
     public String sendMessage() {
-        producer.sendMessage("hello, world");
+        producer.sendMessage("MESSAGE");
         return "success";
-    }
-
-    @GetMapping("/test")
-    public String test() {
-        return "hello";
     }
 }

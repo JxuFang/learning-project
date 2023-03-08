@@ -24,6 +24,8 @@ public class Producer {
 
     public void sendMessage(String message) {
         log.info("start send queue message---->>");
-        jmsMessagingTemplate.convertAndSend(queue, message);
+        jmsMessagingTemplate.convertAndSend(queue, message +"1");
+        jmsMessagingTemplate.convertAndSend(queue, message + "2");
+        jmsMessagingTemplate.convertAndSend(queue, message + "3");
     }
 }
