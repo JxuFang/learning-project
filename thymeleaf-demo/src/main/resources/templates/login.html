@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+
+    <form th:action="@{/login}" method="post">
+        <div>
+            <input type="text" id="userName" name="userName" placeholder="请输入用户名" required="true">
+        </div>
+        <div>
+            <input type="text" id="password" name="password" placeholder="请输入密码" required="true">
+        </div>
+        <div>
+            <div>
+                <input type="text" name="verifyCode" placeholder="请输入验证码" required="true">
+            </div>
+            <div>
+                <img alt="单击图片刷新" src="/common/kaptcha"
+                    onclick="this.src = 'common/kaptcha?d='+new Date()*1">
+            </div>
+        </div>
+        <div>
+            <button type="submit" > 登录
+            </button>
+        </div>
+
+    </form>
+</body>
+</html>
