@@ -1,6 +1,8 @@
 package org.example;
 
 import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 /**
  * @Author: Fang Jinxu
@@ -32,6 +34,9 @@ public class FileStreamTest {
             while ((len = in.read()) != -1) {
                 out.write(len);
             }
+            ServerSocket serverSocket = new ServerSocket();
+            Socket accept = serverSocket.accept();
+            InputStream inputStream = accept.getInputStream();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
